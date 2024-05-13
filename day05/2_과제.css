@@ -66,6 +66,16 @@ border: 1px solid black;}
     border: 1px solid black;
 }
 
+#새소식{padding: 10px;}
+
+#새소식 >.new{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+#새소식 >ul>li{
+    margin: 15px;
+}
 #icon{display: flex;
 flex-wrap: wrap;
 padding: 1px;
