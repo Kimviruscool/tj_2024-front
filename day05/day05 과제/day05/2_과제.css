@@ -283,12 +283,13 @@ margin: 20px;}
     padding: 10px;
 }
 
-#barolink > .photo{ display: flex;
+#barolink > .barolink{ display: flex;
     justify-content: space-between;
     padding: 5px;
     margin: 1px 10px 0px 1px;
     font-size: 13px;
-    border: 1px solid rgb(180, 180, 180);
+    border-bottom: 1px solid rgb(180, 180, 180);
+    border-top: 1px solid rgb(180, 180, 180);
 }
 
 .parking{width: 273px;}
