@@ -1,0 +1,35 @@
+/*=========== 공통 CSS 작업 ===============*/
+*{padding: 0PX; margin: 0px; box-sizing: border-box;}
+li{list-style-type: none;}
+a{color: black; text-decoration: none;}
+/*============ 레 이 아 웃 ===============*/
+/* *{border: 1px solid red;} */
+#header{height: 1280px;
+background-image: url(한솥/banner1.jpg);}
+#content{height: 1280px;}
+#footer{height: 1280px;}
+/*========= 탑 헤더 ====================*/
+#topmenu{ width: 1540px;
+    display: flex; justify-content: flex-end;
+    padding: 1px; font-weight: bold; font-size: 11px;
+    color: white; align-items: center;
+    }
+    
+    #topmenu > li > a{color: white;}
+    #topmenu > li > span{padding: 0px 10px;}
+    #topmenu > li img {width: 15px; margin: 0px 10px 0px 0px;}
+
+    
+#mainmenu{width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between;
+    align-items: center; padding: 0px 40px; background-color: white;}
+
+#mainmenu > ul{ display: flex; width: 70%;
+margin: 0px 160px;}
+
+#mainmenu > ul > li{ height: 70px; 
+display: flex; align-items: center;
+justify-content: center; width: 80px; margin: 15px;
+font-weight: bold;}
+
+#mainmenu .logo {width: 120px; margin: 0px 40px 0px 0px;}
