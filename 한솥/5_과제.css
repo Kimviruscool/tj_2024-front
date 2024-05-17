@@ -4,12 +4,12 @@ li{list-style-type: none;}
 a{color: black; text-decoration: none;}
 /*============ 레 이 아 웃 ===============*/
 /* *{border: 1px solid red;} */
-#header{height: 1280px;
+#header{height: 650px;
 background-image: url(한솥/banner1.jpg);}
-#content{height: 1280px;}
-#footer{height: 1280px;}
+#content{height: 100px;}
+#footer{height: 200px;}
 /*========= 탑 헤더 ====================*/
-#topmenu{ width: 1540px;
+#topmenu{ width: 1460px;
     display: flex; justify-content: flex-end;
     padding: 1px; font-weight: bold; font-size: 11px;
     color: white; align-items: center;
@@ -33,3 +33,21 @@ justify-content: center; width: 80px; margin: 15px;
 font-weight: bold;}
 
 #mainmenu .logo {width: 120px; margin: 0px 40px 0px 0px;}
+/*=====================================================*/
+#mainmenu{position: relative;}
+#mainmenu .submenu{position: absolute;
+top: 80px; padding: 1px; background-color: white;
+width: 100%; text-align: center;
+display: none;}
+
+#mainmenu > ul:hover .submenu{display: block;}
+
+#mainmenu .submenu > li{margin: 8px; font-size: 12px;}
+/*========================================================*/
+.box{border: 1px solid red;
+width: 510px; margin: 10px 10px 10px 260px;
+background-color: #ddd;}
+
+.box > span{font-weight: bold; font-size: 14px;}
+
+.mainmenu{width: 510px;}
