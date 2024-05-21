@@ -32,6 +32,18 @@ for(초기값; 조건문; 증감식){반복실행코드;}
 for(){
     for(){}
 }
+
+- 무한루프 / 종료없는 반복
+for( ; ; ){} : 공백
+while(ture){}
+- 의미없는 반복은 메모리에 과부화
+- 조건문(if) 와 break; 사용
+
+
+- 반복문 키워드
+1. break //가장 가까운 for문의 {}를 탈출/종료/끝내기
+2. continue; // 가장 가까운 for문의 증감식으로 이동
+
 */
 //1. 동일한 코드를 입력하기 위해서는 Ctrl c + Ctrl v하면 된다. 복붙한계가 있음
 
@@ -119,3 +131,45 @@ for(let 구구단=2; 구구단<=9; 구구단++){
     } //for2 end
 } //for1 end
 
+//11. 무한 루프
+// for(;;){console.log('무한반복');} 메모리 과부하의 오류발생
+
+for(;;){
+ //prompt , alert(알림창) , confirm 등등 몇몇 함수들은 입력/출력시 모든 코드실행 중지됨
+let input = prompt('무한입력중 : ');
+console.log(input);
+if(input == 'X' || input == 'x'){break;}
+} 
+
+//12. break; 이용한 1부터 10까지 1씩 증가하면서 만일 5이면 반복문 종료
+for(let i = 1; i <= 10; i++){
+    if(i == 5){break;} //i가 20이면 반복문을 종료
+    console.log(i);
+}
+
+//13. continue; 이용한 1부터 10까지 1씩 증가하면서 출력 만일 5이면 건너뛰기
+for(let i = 1; i <= 10 ; i++){
+    if(i == 5){continue;} //증감식으로 이동
+    console.log(i); 
+}
+
+//14. 입력받은 데이터를 numArray 에 push추가 하기
+//조건1 : 중복 입력은 가능하지만 중복은 저장 불가능
+//조건2 : 배열의 중복없이 6개의 숫자가 등록되면 반복문이 종료
+let numArray = []
+//1. 총 6번을 입력받는다
+for(let i = 1; i<=6; i++){
+   let num = prompt(`${i}번째 의 수 입력`) //2. 입력받는다
+   // ********** 중복 제외 ***********
+   // 입력받은 숫자가 배열내 존재하면 for문 증감식으로 이동
+    if(numArray.indexOf(num)>=0){
+        alert('중복입니다. 다시입력');
+        i--; //현재 반복변수의 카운터는 무효화/차감
+        continue;} 
+    //continue; 또는 break; 만나면 아래코드는 실행되지 않는다.
+    numArray.push(num); //3. 배열 저장한다
+    //무한루프시
+    //if(numArray.length ==6){break;}
+}
+// 4. for문이 끝나고 배열 상태 출력
+console.log(numArray)
