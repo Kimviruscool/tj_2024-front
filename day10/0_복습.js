@@ -51,13 +51,15 @@ let html = ` ${gamepane[0]}  ${gamepane[1]} ${gamepane[2]}<br/>
 document.querySelector('#gamepane').innerHTML=html;
 
 // --p1 입력받고  2. 승리 체크 3. p2입력받고 4.승리체크 이후 반복(무승부)
-if(gamepane[0] == gamepane[1] && gamepane[1] == gamepane[2] ){}
-if(gamepane[3] == gamepane[4] && gamepane[4] == gamepane[5] ){}
-if(gamepane[6] == gamepane[7] && gamepane[7] == gamepane[8] ){}
 
-if(gamepane[0] == gamepane[3] && gamepane[3] == gamepane[6] ){}
-if(gamepane[1] == gamepane[4] && gamepane[4] == gamepane[7] ){}
-if(gamepane[2] == gamepane[5] && gamepane[5] == gamepane[8] ){}
+for(let i = 0; i<=6; i+=3){
+    if(gamepane[i] == gamepane[i+1] && gamepane[i+1] == gamepane[i+2] ){}
+}
+
+
+for(let i = 0; i<=2; i++){
+    if(gamepane[i] == gamepane[i+3] && gamepane[i+3] == gamepane[i+6] ){}
+}
 
 if(gamepane[0] == gamepane[4] && gamepane[4] == gamepane[8] ){}
 if(gamepane[2] == gamepane[4] && gamepane[4] == gamepane[6] ){}
