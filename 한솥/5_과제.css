@@ -36,6 +36,11 @@ justify-content: center; width: 80px; margin: 15px;
 font-weight: bold;}
 
 #mainmenu .logo {width: auto; margin: 0px 40px 0px 0px;}
+
+.submenu div{float: left;}
+
+.submenu> div> li{width: 70px; height: 30px; margin: 8px 18px 8px 18px;
+font-size: 11px;}
 /*=============드롭박스==============================*/
 #mainmenu{position: relative;}
 
@@ -172,7 +177,9 @@ margin-bottom:90px ;}
 #bot3 h3{height: 60px; color: white; font-size: 15px; align-content: center ;
 background-color: #373737; padding-left: 30px;}
 #bot3 img{width: 370px; height: 265px;} /*사진 */
-.arrow{width:5px;}
+
+#bot3 h3{margin-top: -5px;}
+
 /*==================== 푸터 ============================*/
 #footer{background-color: #f2c000; height: 310px;
 justify-content: center; margin: 0px auto;}
