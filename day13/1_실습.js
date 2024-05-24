@@ -138,6 +138,8 @@ function _read( index ){
 // 4. 수정 실행조건 : (누구를)1. 수정버튼 클릭할때 
 function _update(index){ 
 
+  if( _pwConfirm(index) == false) return;
+
   //배열내 특정 인덱스 수정
   //1. 해당 게시물 분류
   let board = boardList[index].split(',');
@@ -156,9 +158,25 @@ function _update(index){
 
 // 5. 삭제함수 실행조건 : (누구를)1. 삭제버튼 클릭할때
 function _delete(index){ 
+
+  if( _pwConfirm(index) == false) return;
+
   //배열내 특정 인덱스 삭제
   boardList.splice(index, 1);
   //화면 새로고침 (재출력 : 데이터 변화가 있기 때문에)
   _allRead();
   document.querySelector('#viewPage').innerHTML = '';
+}
+
+//6. 패스워드 체크 함수
+function _pwConfirm(index){
+    // -패스워드 검증 후
+  //1. 검증받을 패스워드 입력받는다.
+  let confirmPw = prompt('비밀번호');
+  //2. 해당 인덱스의 비밀번호 와 입력받은 비밀번호가 다르면 함수를 중간에 종료한다
+  if(confirmPw != boardList[index].split(',')[2]){
+    alert('패스워드가 다릅니다.');
+    return false; //패스워드 불일치 뜻 , 함수종료 , 이하 아래 코드는 실행이 안됨.
+  }
+  return true; //패스워드 일치 뜻
 }
