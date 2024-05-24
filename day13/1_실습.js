@@ -130,12 +130,35 @@ function _read( index ){
                 <span> 작성일 : ${ boardArray[3] } </span>
               </div>
               <div> ${ boardArray[1] } </div>
-              <button>수정</button>
-              <button>삭제</button>`;
+              <button onclick="_update(${index})">수정</button>
+              <button onclick="_delete(${index})">삭제</button>`;
   // 3. 출력/대입 
   viewPage.innerHTML = html;
 }
-// 4.
-function _update(){ }
-// 5.
-function _delete(){ }
+// 4. 수정 실행조건 : (누구를)1. 수정버튼 클릭할때 
+function _update(index){ 
+
+  //배열내 특정 인덱스 수정
+  //1. 해당 게시물 분류
+  let board = boardList[index].split(',');
+  //새로운 제목과 내용을 입력 받는다
+  let uptitle = prompt('수정할제목');
+  let ucontent = prompt('수정할내용');
+  //수정된 정보로 구성 : 새로운 제목과 내용만 수정 변수로 하고 나머지는 기존 데이터 사용
+  let uboard = `${uptitle},${ucontent},${board[2]},${board[3]},${board[4]}`;
+  //
+  boardList[index] = uboard;
+  //화면 새로고침(재 출력: 데이터 변화가 있기 때문에)
+  _allRead();
+  _read(index);
+
+}
+
+// 5. 삭제함수 실행조건 : (누구를)1. 삭제버튼 클릭할때
+function _delete(index){ 
+  //배열내 특정 인덱스 삭제
+  boardList.splice(index, 1);
+  //화면 새로고침 (재출력 : 데이터 변화가 있기 때문에)
+  _allRead();
+  document.querySelector('#viewPage').innerHTML = '';
+}
