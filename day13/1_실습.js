@@ -13,7 +13,7 @@
     [ 백엔드 ]
     1.메모리 구성
       1. 등록용:제목 , 내용 , 비밀번호 
-      2. 출력용:날짜 , 조회수 
+      2. 출력용:제목, 날짜 , 조회수 
       - 1안(배열) :  배열 5개 
         1. title = [ title1, title2 , title3 ] , 
           content = [ content1 ,content2,content3 ] , 
