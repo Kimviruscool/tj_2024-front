@@ -144,9 +144,9 @@ function _update(index){
   //새로운 제목과 내용을 입력 받는다
   let uptitle = prompt('수정할제목');
   let ucontent = prompt('수정할내용');
-  //수정된 정보로 구성 : 새로운 제목과 내용만 수정 변수로 하고 나머지는 기존 데이터 사용
+  //수정할 정보로 구성 : 새로운 제목과 내용만 수정 변수로 하고 나머지는 기존 데이터 사용
   let uboard = `${uptitle},${ucontent},${board[2]},${board[3]},${board[4]}`;
-  //
+  // 선택된 인덱스의 수정할 정보 대입
   boardList[index] = uboard;
   //화면 새로고침(재 출력: 데이터 변화가 있기 때문에)
   _allRead();
