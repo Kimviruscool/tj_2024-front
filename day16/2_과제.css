@@ -13,7 +13,8 @@ flex-wrap: wrap;}
     border: 1px solid black;
 }
 
-#calTop{display: flex;}
+#calTop{display: flex; justify-content: center;}
 
 #red{background-color: rgb(255, 94, 94);}
 #blue{background-color: rgb(103, 103, 255);}
+
