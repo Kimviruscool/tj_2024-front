@@ -193,3 +193,4 @@ function 데이터최신화(처리번호) {
 //6-2 : 제품목록을 브라우저의 locaclstorage 호출
 //6-3 : 주문목록을 브라우저의 locaclstorage 저장
 //6-4 : 주문목록을 브라우저의 locaclstorage 호출
+

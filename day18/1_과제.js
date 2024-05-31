@@ -84,6 +84,7 @@ function 부서배정출력() {
                   <td>${찾은부서명} </td> 
                   <td>${부서배정[i].직책}</td> 
                   <td>${부서배정[i].배정일}</td> 
+                  <button onclick="remove(${i})">삭제</button>
                  </tr>`
     }
 
@@ -188,4 +189,10 @@ function 인사출력(){                                        console.log('인
 
     }        
     인사출력.innerHTML = html;
+}
+
+/////////////////////////////////////////////////
+function remove(deleteIndex){
+    부서배정.splice(deleteIndex,1);
+    부서배정출력();
 }
