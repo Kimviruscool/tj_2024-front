@@ -36,6 +36,14 @@ function 부서목록출력(){  console.log('부서목록출력()');
   부서목록출력구역.innerHTML = html;
 }
 
+function 인사조회(인사코드) {
+  for(i = 0; i < 인사정보.length; i++){
+    if(인사코드 == 인사정보[i].인사코드){
+      let 찾은인사 = 인사정보[i] 
+      return 찾은인사;
+    }
+  }
+}
 /*
 function 부서목록호출(){
   부서목록 = JSON.parse(localStorage.getItem( '부서목록' ) );
