@@ -16,12 +16,38 @@ function 부서배정추가() {
 
     let 배정 = {배정코드 : a++, 배정일 : 배정일입력, 직책 : 직책입력,인사코드 : 인사코드입력, 부서코드 : 부서코드입력 };
 
+    let sw = false // sw 변수에 false을 저장해두고   
+    for(let i=0; i<인사정보.length; i++){
+       if( 인사정보[i].인사코드 == 배정.인사코드){
+        sw = true; // 만약에 동일한 인사코드가 있으면 sw변수에 찾았다는 증거로 true 넣어주기
+        break; // for문 탈출
+        //return; // 함수 탈출   
+       }
+    }
+    // 여기가 for 탈출 후 이동되는 곳 
+
+    // 만약에 sw변수가 false(못찾다는 증거) 이면 push 막기 위해 함수 종료 
+    if( sw == false ){ alert('등록되지 않은 인사코드입니다.');return };
+
+    let ws = false
+    for(let i=0 ; i<부서목록.length; i++){
+        if(부서목록[i].부서코드 == 배정.부서코드){
+            ws = true;
+            break;
+        }
+    }
+    if( ws == false){alert('등록되지 않은 부서코드입니다.');return};
+
+
+
     부서배정.push(배정)
 
     alert('배정완료')
 
     부서배정출력();
 }
+// 여기가 return 했을때 이동 되는 곳 
+
 console.log(부서배정)
 
 부서배정출력();
@@ -40,7 +66,6 @@ function 부서배정출력() {
                  </tr>`
     }
 
-    if(인사코드 == 부서코드)
 
     //출력
     배정출력.innerHTML = html;
@@ -113,7 +138,7 @@ function 인사등록(){                                            console.log(
     인사출력();
 }
 
-
+인사출력();
 function 인사출력(){                                        console.log('인사출력()');
 
     let 인사출력 = document.querySelector('#인사출력');
