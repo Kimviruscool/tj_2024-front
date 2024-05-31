@@ -19,12 +19,12 @@
         <div class="col-3">
             <h4>제품 등록</h4>
             
-                <input class="form-control" placeholder="제품명 입력해주세요."/>
-                <input class="form-control" placeholder="가격 입력해주세요."/> <br/>
+                <input id="order" class="form-control" placeholder="제품명 입력해주세요."/>
+                <input id="price" class="form-control" placeholder="가격 입력해주세요."/> <br/>
 
             <button id="btn1" class="btn btn-primary" onclick="add()"> 제품등록 </button><br/><br/>
 
-            <button id="btn2" class="btn btn-danger" onclick=""> 3초마다 자동주문</button>
+            <button id="btn2" class="btn btn-danger" onclick="autoorder()"> 3초마다 자동주문</button>
         </div>
 
         <div class="col">
@@ -42,6 +42,7 @@
     </div>
 
     <script src='7_과제.js'></script>
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
