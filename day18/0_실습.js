@@ -22,7 +22,8 @@ function 제품등록() {
     let 제품명 = document.querySelector('#제품명').value;
     let 가격 = document.querySelector('#가격').value;
     //2. 데이터를 가공(객체화)
-    let 제품번호 = 제품목록[제품목록.length-1].제품번호+1;//현재 제품목록의 마지막 제품번호의  +1, 길이는 1부터 / 인덱스 0부터 / 끝 인덱스 : length -1
+    
+    let 제품번호 = 제품목록.length != 0 ? 제품목록[제품목록.length-1].제품번호+1 : 1;//현재 제품목록의 마지막 제품번호의  +1, 길이는 1부터 / 인덱스 0부터 / 끝 인덱스 : length -1
     
     let 제품 = {제품번호 : 제품번호, 제품명: 제품명, 가격 : 가격};
     //3. [유효성검사]
@@ -73,7 +74,7 @@ function 주문등록(제품번호){ console.log('주문등록()'+제품번호);
        데이터최신화(4);
     //1.
     //2. 데이터 가공 (객체화 : 저장 어떻게(형식)으로 저장할지 구성)
-    let 주문번호 = 주문목록[주문목록.length-1].주문번호+1; //마지막 주문번호에 +1, 마지막주문번호 = 마지막인덱스의주문번호 = 배열.length-1
+    let 주문번호 = 주문목록.length-1 >= 0 ? 주문목록[주문목록.length-1].주문번호+1 : 1; //마지막 주문번호에 +1, 마지막주문번호 = 마지막인덱스의주문번호 = 배열.length-1
     let date = new Date();
     let 주문일자 = `${date.getFullYear()}-${자릿수변환(date.getMonth()+1)}-${자릿수변환(date.getDate())} ${자릿수변환(date.getHours())}:${자릿수변환(date.getMinutes())}`;
     
@@ -177,7 +178,7 @@ function 데이터최신화(처리번호) {
     if(제품목록 == null){제품목록 = []}
     //==============주문목록============================================
     }else if(처리번호 == 3){
-    localStorage.setItem('orderList', JSON.stringify('주문목록'));
+    localStorage.setItem('orderList', JSON.stringify( 주문목록 ));
     }else if(처리번호 ==4) {
     주문목록 = JSON.parse(localStorage.getItem('orderList'));
     if(주문목록 == null){주문목록 = []}
