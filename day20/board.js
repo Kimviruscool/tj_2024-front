@@ -1,8 +1,9 @@
 let boardlist = [];
 
 function add() { console.log('add()');
-     location.href="wirte.html";
+     location.href="write.html";
 }
+
 printboard();
 function printboard() {
     
@@ -16,7 +17,7 @@ function printboard() {
     for(let i = 0 ; i < boardlist.length ; i++){
         html += `<tr>
                  <th> ${boardlist[i].no} </th>
-                 <th> ${boardlist[i].제목} </th>
+                 <th> ${boardlist[i].title} </th>
                  <th> ${boardlist[i].writer} </th>
                  <th> ${boardlist[i].date} </th>
                  <th> ${boardlist[i].view} </th>
